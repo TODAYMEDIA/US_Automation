@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>100 Ton Injection Molding Machine Explorer</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <h1>100 Ton Injection Molding Machine – Capability Explorer</h1>
+    <p>
+      Interactive web app to understand machine capabilities, subsystem parts,
+      material grades, and practical uses in production.
+    </p>
+  </header>
+
+  <main>
+    <section class="panel" id="machine-overview">
+      <h2>Machine Overview</h2>
+      <div id="overview-grid" class="grid"></div>
+    </section>
+
+    <section class="panel">
+      <h2>Capability Calculator</h2>
+      <div class="calc-grid">
+        <label>
+          Part weight (g)
+          <input type="number" id="partWeight" min="1" value="85" />
+        </label>
+        <label>
+          Cavities
+          <input type="number" id="cavities" min="1" value="2" />
+        </label>
+        <label>
+          Cycle time (s)
+          <input type="number" id="cycleTime" min="5" value="28" />
+        </label>
+        <label>
+          Machine uptime (%)
+          <input type="number" id="uptime" min="1" max="100" value="88" />
+        </label>
+      </div>
+      <button id="runCalc">Run Calculation</button>
+      <div id="calcResult" class="result"></div>
+    </section>
+
+    <section class="panel">
+      <h2>Part Library (All Machine Sections)</h2>
+      <div class="toolbar">
+        <input type="search" id="search" placeholder="Search part name, grade, or use" />
+        <select id="systemFilter"></select>
+        <select id="materialFilter"></select>
+      </div>
+      <p id="partCount"></p>
+      <div id="parts" class="parts-grid"></div>
+    </section>
+
+    <section class="panel">
+      <h2>Process Suitability Matrix</h2>
+      <div id="processMatrix"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>
+      Note: Data shown is a practical engineering baseline for a 100-ton class
+      machine. Actual values depend on OEM model, screw design, resin behavior,
+      and mold tooling.
+    </p>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
